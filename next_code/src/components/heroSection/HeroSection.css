@@ -1,0 +1,25 @@
+.Hero_section_component_class {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--background-light);
+    text-align: center;
+    padding: 4rem 0;
+    margin-bottom: 2rem;
+
+    .hero-title {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.25rem;
+        opacity: 0.9;
+    }
+
+    @media (max-width: 768px) {
+        padding: 3rem 0;
+
+        .hero-title {
+            font-size: 2.5rem;
+        }
+    }
+}

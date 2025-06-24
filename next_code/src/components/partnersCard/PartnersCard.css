@@ -1,0 +1,35 @@
+.Partners_card_component_class {
+    cursor: pointer;
+    text-align: center;
+    padding: var(--spacing-4);
+    background-color: var(--background-light);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-md);
+        border-color: var(--secondary-color);
+    }
+
+    .partner-logo {
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+        transition: all 0.3s ease;
+        margin-bottom: var(--spacing-2);
+    }
+
+    h3 {
+        margin-bottom: var(--spacing-1);
+        color: var(--text-primary);
+        font-size: var(--font-size-base);
+    }
+
+    p {
+        color: var(--text-secondary);
+        font-size: var(--font-size-sm);
+    }
+} 

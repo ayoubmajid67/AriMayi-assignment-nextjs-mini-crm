@@ -1,0 +1,42 @@
+.DropdownMenuComponentClass{
+
+
+ 
+        position: relative;
+        cursor: pointer;
+    
+    .dropdown-trigger {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+    }
+    
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: white;
+        min-width: 250px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+        z-index: 1000;
+        padding: 0.5rem 0;
+    }
+    
+    .dropdown-item {
+        display: block;
+        padding: 0.75rem 1rem;
+        color: #333;
+        text-decoration: none;
+        transition: background-color 0.2s;
+        font-size: 0.9rem;
+        &.Active,
+        &:hover {
+            background-color: #f5f5f5;
+            color: #007bff;
+        }
+        
+    }
+    
+   
+
+}

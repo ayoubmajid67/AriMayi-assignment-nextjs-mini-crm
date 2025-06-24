@@ -1,0 +1,132 @@
+.ClientDetailPageComponentClass {
+    padding: 2rem;
+    background-color: var(--backgroundLight);
+
+    .detailHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+
+        .backButton, .editLink {
+            background-color: white;
+            color: var(--textDark);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+            &:hover {
+                background-color: #f9fafb;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            }
+        }
+
+        .editLink {
+            color: var(--primaryColor);
+            border-color: var(--primaryColor-light);
+
+            &:hover {
+                background-color: var(--primaryColor-light);
+            }
+        }
+    }
+
+    .clientInfoCard, .historyCard {
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        margin-bottom: 2rem;
+        padding: 2rem;
+    }
+
+    .cardHeader {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #eee;
+
+        .clientBigAvatar {
+            font-size: 3rem;
+            color: var(--secondaryColor);
+        }
+
+        h2, h3 {
+            margin: 0;
+            font-size: 1.75rem;
+            color: var(--textDark);
+        }
+
+        h3 {
+            font-size: 1.25rem;
+        }
+    }
+
+    .cardBody p {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-size: 1rem;
+        color: var(--textDark);
+        margin: 0 0 1rem 0;
+
+        .svg-inline--fa {
+            color: var(--textLight);
+            width: 20px;
+        }
+    }
+
+    .historyList {
+        list-style: none;
+        padding: 0;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #eee;
+        }
+    }
+
+    .historyItem {
+        position: relative;
+        padding-left: 3rem;
+        margin-bottom: 1.5rem;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 3px;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: var(--secondaryColor);
+            border: 2px solid white;
+        }
+
+        .historyDate {
+            font-weight: 600;
+            color: var(--textDark);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .historyAction {
+            margin: 0;
+            color: var(--textLight);
+        }
+    }
+}

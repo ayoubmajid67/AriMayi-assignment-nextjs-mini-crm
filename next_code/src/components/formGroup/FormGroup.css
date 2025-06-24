@@ -1,0 +1,126 @@
+.Form-group-component_class {
+    margin-bottom: 1.5rem;
+   
+
+    .form-label {
+        display: block;
+        margin-bottom: 0.75rem;
+        color: var(--text-primary);
+        font-weight: 500;
+        font-size: 1rem;
+    }
+    
+    .form-input {
+        width: 100%;
+        padding: 1rem;
+        border: 2px solid var(--border-color);
+        border-radius: 8px;
+        background: var(--bg-white);
+        color: var(--text-primary);
+        transition: all 0.3s ease;
+        font-size: 1rem;
+
+        &:hover {
+            border-color: var(--primary-color);
+        }
+        
+        &:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.1);
+        }
+
+        &::placeholder {
+            color: var(--text-secondary);
+            opacity: 0.7;
+        }
+    }
+    
+    .checkbox-group {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+    
+    .checkbox-label {
+        color: var(--text-secondary);
+        cursor: pointer;
+        font-size: 0.95rem;
+        user-select: none;
+    }
+    
+    select.form-input {
+        cursor: pointer;
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 1rem center;
+        background-size: 1.2rem;
+        padding-right: 2.5rem;
+    }
+    
+    textarea.form-input {
+        resize: vertical;
+        min-height: 150px;
+        line-height: 1.6;
+    }
+
+    input[type="checkbox"].form-input {
+        width: 1.2rem;
+        height: 1.2rem;
+        margin: 0;
+        cursor: pointer;
+        accent-color: var(--primary-color);
+    }
+
+    .file-input-group {
+        position: relative;
+        width: 100%;
+    }
+
+    .file-input-group input[type="file"] {
+        position: absolute;
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        z-index: -1;
+    }
+
+    .file-input-label {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 1rem;
+        border: 2px solid var(--border-color);
+        border-radius: 8px;
+        background: var(--bg-white);
+        color: var(--text-primary);
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .file-input-label:hover {
+        border-color: var(--primary-color);
+    }
+
+    .file-input-text {
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+    }
+
+    .file-input-button {
+        padding: 0.5rem 1rem;
+        background: var(--primary-color);
+        color: white;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        transition: background-color 0.3s ease;
+    }
+
+    .file-input-label:hover .file-input-button {
+        background: var(--secondary-color);
+    }
+}
+

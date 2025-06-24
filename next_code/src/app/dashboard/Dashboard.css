@@ -1,0 +1,9 @@
+/* styles/Dashboard.css */
+.DashboardLayoutComponentClass main {
+  padding: 2rem;
+}
+
+.DashboardPageComponentClass h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}

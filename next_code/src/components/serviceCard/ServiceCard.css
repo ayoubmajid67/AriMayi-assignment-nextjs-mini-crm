@@ -1,0 +1,57 @@
+.Service_card_component_class {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        border-color: #2563eb;
+    }
+
+    .service-icon {
+        width: 70px;
+        height: 70px;
+        margin: 0 auto 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%);
+        border-radius: 50%;
+        color: white;
+        font-size: 1.75rem;
+    }
+
+    .service-title {
+        color: #1e293b;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .service-description {
+        color: #64748b;
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+    }
+
+    .btn-secondary {
+        background: transparent;
+        color: #2563eb;
+        border: 2px solid #2563eb;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.5rem;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+
+        &:hover {
+            background: #2563eb;
+            color: white;
+            transform: translateY(-2px);
+        }
+    }
+}

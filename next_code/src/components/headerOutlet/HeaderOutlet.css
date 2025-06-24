@@ -1,0 +1,169 @@
+/* .HeaderOutletComponentClass */
+.HeaderOutletComponentClass {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--background-light);
+    box-shadow: var(--shadow-md);
+    z-index: 1000;
+    padding: var(--spacing-6) 0;
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 var(--spacing-4);
+    }
+
+    .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .nav-logo {
+            .nav-logo-img {
+                height: 55px;
+                width: auto;
+            }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--spacing-6);
+            align-items: center;
+
+            .nav-link {
+                position: relative;
+                padding: var(--spacing-2) 0;
+                color: var(--text-primary);
+                text-decoration: none;
+                transition: color var(--transition-normal) var(--transition-timing);
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 0;
+                    height: 2px;
+                    background-color: var(--secondary-color);
+                    transition: width var(--transition-normal) var(--transition-timing);
+                }
+
+                &:hover {
+                    color: var(--secondary-color);
+
+                    &::after {
+                        width: 100%;
+                    }
+                }
+
+                &.active {
+                    color: var(--secondary-color);
+                
+
+                    &::after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        .devis-btn {
+            background-color: var(--primary-color);
+            color: var(--background-light);
+            border: none;
+            padding: var(--spacing-2) var(--spacing-4);
+            border-radius: var(--radius-md);
+            font-weight: var(--font-weight-medium);
+            transition: all var(--transition-normal) var(--transition-timing);
+            text-decoration: none;
+            display: inline-block;
+
+            &:hover {
+                background-color: var(--secondary-color);
+            }
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: var(--font-size-2xl);
+            color: var(--text-primary);
+            cursor: pointer;
+            padding: var(--spacing-2);
+            transition: color var(--transition-normal) var(--transition-timing);
+
+            &:hover {
+                color: var(--secondary-color);
+            }
+        }
+    }
+
+    @media (max-width: 992px) {
+        .nav {
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: var(--background-light);
+                flex-direction: column;
+                padding: var(--spacing-4) 0;
+                border-top: 1px solid var(--border-color);
+                display: none;
+                box-shadow: var(--shadow-md);
+
+                &.active {
+                    display: flex;
+                }
+            }
+
+            .nav-toggle {
+                display: block;
+            }
+
+            .devis-btn {
+                display: none;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding: var(--spacing-4) 0;
+
+        .container {
+            padding: 0 var(--spacing-4);
+        }
+    }
+}
+
+.formations-link-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.formations-link-wrapper .OtherLinksBoxComponentClass {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.formations-link-wrapper .activeOtherLinksBoxComponentClass {
+    transform: translateX(-50%) translateY(0);
+}
+
+.sign-out-btn {
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0;
+    margin-left: var(--spacing-4);
+    transition: color var(--transition-normal) var(--transition-timing);
+}
+
+.sign-out-btn:hover {
+    color: var(--secondary-color);
+}

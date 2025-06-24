@@ -1,0 +1,38 @@
+.FormInputComponentClass {
+    position: relative;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.FormInputComponentClass .input-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--greyColor);
+}
+
+.FormInputComponentClass .form-input-field {
+    width: 100%;
+    padding: 0.8rem 2.5rem 0.8rem 2.5rem;
+    border: 1px solid var(--greyLight);
+    border-radius: var(--borderRadius);
+    background-color: var(--backgroundLight);
+    color: var(--textColor);
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.FormInputComponentClass .form-input-field:focus {
+    outline: none;
+    border-color: var(--primaryColor);
+}
+
+.password-toggle-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--greyColor);
+    cursor: pointer;
+}

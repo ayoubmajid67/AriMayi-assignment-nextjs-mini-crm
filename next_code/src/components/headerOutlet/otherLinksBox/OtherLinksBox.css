@@ -1,0 +1,184 @@
+.OtherLinksBoxComponentClass {
+    position: absolute;
+    top: 100%;
+
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    padding: 2rem;
+    display: none;
+    z-index: 1000;
+    border-radius: 0 0 12px 12px;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+
+    @media (max-width:992px) {
+        top: 202px;
+    }
+    
+}
+
+.activeOtherLinksBoxComponentClass {
+    display: block;
+    animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.links-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.links-column {
+    min-width: 0;
+}
+
+.link-group {
+    margin-bottom: 2rem;
+}
+
+.link-group:last-child {
+    margin-bottom: 0;
+}
+
+.group-title {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--secondary-color);
+    position: relative;
+}
+
+.group-title::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.link-group:hover .group-title::after {
+    width: 100%;
+}
+
+.links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.links li {
+    margin: 0;
+}
+
+.links a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: transparent;
+}
+
+.links a:hover {
+    background-color: var(--background-light);
+    color: var(--primary-color);
+    transform: translateX(4px);
+}
+
+.links svg {
+    width: 18px;
+    height: 18px;
+    color: var(--primary-color);
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+}
+
+.links a:hover svg {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+    .links-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .links-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .OtherLinksBoxComponentClass {
+        padding: 1.5rem;
+    }
+
+    .links-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .link-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .links a {
+        padding: 0.4rem 0.6rem;
+    }
+}
+
+/* Scrollbar Styling */
+.OtherLinksBoxComponentClass {
+    max-height: 80vh;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) transparent;
+}
+
+.OtherLinksBoxComponentClass::-webkit-scrollbar {
+    width: 6px;
+}
+
+.OtherLinksBoxComponentClass::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.OtherLinksBoxComponentClass::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 3px;
+}

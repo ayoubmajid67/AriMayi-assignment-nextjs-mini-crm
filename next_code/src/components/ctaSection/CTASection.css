@@ -1,0 +1,22 @@
+.CTASection_component_class {
+    padding: 3rem 0;
+    border-top: 1px solid var(--border-color);
+
+    &.primary {
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        color: var(--background-light);
+        text-align: center;
+    }
+
+    &.secondary {
+        background: linear-gradient(135deg, #51565b 60%, #48271ead 100%);
+        color: var(--background-light);
+        text-align: start;
+    }
+    .cta-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        margin-top: 2rem;
+      }
+} 

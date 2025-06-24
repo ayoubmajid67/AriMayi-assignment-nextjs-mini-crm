@@ -1,0 +1,27 @@
+.Info_item_component_class{
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    .info-icon {
+        color: var(--secondary-color);
+        font-size: 1.5rem;
+        margin-right: 1.3rem;
+        margin-top: 0.25rem;
+    }
+
+    h3 {
+        color: var(--text-primary);
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+    }
+
+    p {
+        color: var(--text-secondary);
+        line-height: 1.6;
+    }
+} 

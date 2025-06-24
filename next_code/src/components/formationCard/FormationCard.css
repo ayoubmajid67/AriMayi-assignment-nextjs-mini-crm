@@ -1,0 +1,86 @@
+.FormationCardComponentClass {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .formation-image {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+
+        .image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        &:hover .image {
+            transform: scale(1.05);
+        }
+    }
+
+    .formation-content {
+        padding: 1.5rem;
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .formation-description {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .formation-details {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+
+            .detail-item {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                color: var(--text-light);
+                font-size: 0.9rem;
+
+                i {
+                    color: var(--primary-color);
+                }
+            }
+        }
+
+        .btn {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    /* Animation classes */
+    &.animate-fade-in {
+        animation: fadeIn 0.5s ease forwards;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} 

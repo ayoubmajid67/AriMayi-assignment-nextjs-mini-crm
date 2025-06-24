@@ -1,0 +1,69 @@
+Vous ne précisiez pas la techno dans votre message initial …
+
+👏
+👍
+😊
+
+
+
+Nous vous proposons ce challenge à nous remettre via un lien vers le repo contenant l'exercice Front End – Module CRM (NextJS). 
+
+Attention, ne pas utiliser ChatGPT - le critère sera évalué 
+
+Pensez à créer le readme
+
+
+Objectif de l’exercice
+Créer l’interface front-end d’un mini CRM en Next.js, incluant une gestion des clients, une navigation fonctionnelle et une interaction dynamique avec des données simulées.
+
+Contexte
+Vous travaillez sur un projet de CRM interne pour une petite équipe commerciale. Le but est de pouvoir :
+ • Consulter une liste de clients,
+ • Visualiser la fiche détaillée d’un client,
+ • Ajouter un nouveau client via un formulaire.
+
+
+Fonctionnalités attendues (à développer en front-end uniquement)
+1. Page de connexion (Mock)
+ • Affichage d’un écran de connexion (pas besoin de back, aucune validation).
+ • Design propre et responsive.
+2. Dashboard (après “connexion”)
+ • Barre de navigation (ex : Dashboard, Clients, Ajouter un client).
+ • Composant de layout structuré.
+3. Liste des clients
+ • Affichage d’une table avec des clients mockés (JSON statique ou généré avec Faker.js).
+ • Colonnes : nom, email, téléphone, date de création.
+ • Possibilité de trier par nom.
+ • Barre de recherche (filtre en front).
+4. Fiche client
+ • Accessible au clic sur une ligne de la table.
+ • Affichage des informations détaillées du client.
+ • Ajout d’un petit historique d’activités (mocké).
+5. Formulaire d’ajout
+ • Formulaire en React Hook Form ou contrôlé à la main.
+ • Champs obligatoires : nom, prénom, email, téléphone.
+ • Validation simple (email valide, téléphone au bon format).
+ • Affichage d’un message de succès (pas besoin de persister les données).
+
+Compétences évaluées
+ • Maîtrise de Next.js (pages ou App Router selon version),
+ • Utilisation de composants réutilisables,
+ • Structuration du projet,
+ • Gestion du state (avec ou sans lib),
+ • Sens du design et de l’ergonomie,
+ • Capacité à rendre une interface dynamique et fluide.
+
+Stack imposée / conseillée
+ • Next.js
+ • React (v18+)
+ • Tailwind CSS ou autre framework de design (au choix)
+ • TypeScript (bonus mais pas obligatoire)
+ • React Hook Form ou gestion manuelle
+ • Pas d’appel API réel (les données sont mockées)
+
+Bonus si temps disponible
+ • Ajout d’un système de “tags” par client
+ • Pagination
+ • Responsive mobile complet
+ • Utilisation de Zustand ou Redux Toolkit pour la gestion de state
+ • Tests (Jest, Testing Library)

@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { findUserByEmail } from '@/app/db/users';
 import jwt from 'jsonwebtoken';
 
-
+import { jwtExpirationTime } from '@/utils/auth';
 export async function POST(request) {
     const { email, password } = await request.json();
 
@@ -22,7 +22,7 @@ export async function POST(request) {
         );
     }
 
-    // Create JWT payload
+
     const payload = {
         id: user.id,
         email: user.email,
@@ -31,7 +31,7 @@ export async function POST(request) {
 
     // Sign the token
     const token = jwt.sign(payload, process.env.JWT_SECRET, {
-        expiresIn: '24h', 
+        expiresIn: jwtExpirationTime + 'h', 
     });
 
     const { password: _, ...userToReturn } = user;

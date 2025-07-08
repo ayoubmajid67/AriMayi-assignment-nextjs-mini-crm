@@ -7,7 +7,6 @@ import AuthForm from '@/components/authForm/AuthForm';
 import FormInput from '@/components/formInput/FormInput';
 import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
 import { useSnackbar } from '@/hooks/useSnackbar';
-import { AlertSnackBar } from '@/components/alert/AlertSnackBar';
 import "./Login.css";
 
 export default function LoginPage() {
@@ -16,11 +15,7 @@ export default function LoginPage() {
   const { login } = useAuth();
 
   const {
-    snackbarOpen,
-    message,
-    severity,
     handleSnackbarOpen,
-    handleSnackbarClose,
   } = useSnackbar();
 
   const [formData, setFormData] = useState({
@@ -28,7 +23,7 @@ export default function LoginPage() {
     password: '',
   });
 
-  // Pre-fill email from query param
+
   useEffect(() => {
     const emailFromQuery = searchParams.get('email');
     if (emailFromQuery) {
@@ -83,12 +78,6 @@ export default function LoginPage() {
         />
       </AuthForm>
 
-      <AlertSnackBar
-        open={snackbarOpen}
-        message={message}
-        severity={severity}
-        onClose={handleSnackbarClose}
-      />
     </main>
   );
 }

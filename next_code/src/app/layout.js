@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Esprit Conseil SARL - Formation et Conseil Professionnel",
+  title: "AriMayi",
   description: "Expertise, Innovation et Excellence au service de votre développement",
 };
 
@@ -33,7 +33,7 @@ import FontAwesomeProvider from "@/providers/FontAwesomeProvider";
 import AuthProvider from '@/providers/AuthProvider';
 import PageLoader from "@/app/PageLoader";
 
-
+import SnackbarProvider from '@/providers/SnackbarProvider'; 
 
 export default function RootLayout({ children }) {
   
@@ -47,11 +47,13 @@ export default function RootLayout({ children }) {
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
 
           <AuthProvider>
+             <SnackbarProvider >
             <FontAwesomeProvider>
               <PageLoader>
                 {children}
               </PageLoader>
             </FontAwesomeProvider>
+            </SnackbarProvider>
           </AuthProvider>
       
       </body>

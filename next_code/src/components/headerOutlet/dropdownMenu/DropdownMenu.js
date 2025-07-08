@@ -5,7 +5,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import "./DropdownMenu.css"
 
 
-export default function DropdownMenu({ items, triggerText, basePath,onPageChange,className,onMouseEnter }) {
+export default function DropdownMenu({ items, triggerText, basePath,onPageChange,className,onMouseEnter,triggerIsLink=true }) {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
@@ -27,8 +27,10 @@ export default function DropdownMenu({ items, triggerText, basePath,onPageChange
   }
 
   const handleSpanClick = () => {
+    if (!triggerIsLink)  return;    
+    
     router.push(basePath);
-    handleItemClick("")
+    handleItemClick("");
     setIsOpen(false);
   }
   return (

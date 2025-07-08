@@ -13,7 +13,6 @@ import HeaderProfile from '@/components/headerProfile/HeaderProfile';
 const clientsPath = "/clients";
 const clientsItems = [
   { id: '', label: 'Clients'},
-  { id: 'add-client', label: 'Ajouter Client'},
 ];
 
 const authItems = [
@@ -61,7 +60,7 @@ export default function HeaderOutlet({ customClass, profileImg = false }) {
           >
             <Image 
               src="/assets/logo.png" 
-              alt="Esprit Conseil Logo" 
+              alt="AriMayi  Logo" 
               className="nav-logo-img"
               width={150}
               height={55}
@@ -79,17 +78,11 @@ export default function HeaderOutlet({ customClass, profileImg = false }) {
 
               {isAuthenticated && (
                 <>
-                  <Link
-                href="/dashboard"
-                className={`nav-link ${isActive('/dashboard') ? 'active' : ''}`}
-                onClick={() => handlePageChange('/dashboard')}
-              >
-                Dashboard
-              </Link>
+                
               <DropdownMenu
                 className={`nav-link ${isActive('/clients') || isActive('/add-client') ? 'active' : ''}`}
                 items={clientsItems}
-                triggerText="Clients"
+                triggerText="Dashboard"
                 basePath={clientsPath}
                 onPageChange={handlePageChange}
               />
@@ -102,7 +95,7 @@ export default function HeaderOutlet({ customClass, profileImg = false }) {
                   className={`nav-link ${isActive('/profile') ? 'active' : ''}`}
                   items={authItems}
                   triggerText="S'identifier"
-                  basePath="/auth"
+                  basePath="/auth/"
                   onPageChange={handlePageChange}
                   triggerIsLink={false}
                 />

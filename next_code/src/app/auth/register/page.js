@@ -7,7 +7,7 @@ import AuthForm from '@/components/authForm/AuthForm';
 import FormInput from '@/components/formInput/FormInput';
 import { faUser, faEnvelope, faLock, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { useSnackbar } from '@/hooks/useSnackbar';
-import { AlertSnackBar } from '@/components/alert/AlertSnackBar';
+
 import "./Register.css";
 
 export default function RegisterPage() {
@@ -23,11 +23,7 @@ export default function RegisterPage() {
   const { register } = useAuth();
 
   const {
-    snackbarOpen,
-    message,
-    severity,
     handleSnackbarOpen,
-    handleSnackbarClose,
   } = useSnackbar();
 
   const handleChange = (e) => {
@@ -111,12 +107,7 @@ export default function RegisterPage() {
         />
       </AuthForm>
 
-      <AlertSnackBar
-        open={snackbarOpen}
-        message={message}
-        severity={severity}
-        onClose={handleSnackbarClose}
-      />
+
     </main>
   );
 }

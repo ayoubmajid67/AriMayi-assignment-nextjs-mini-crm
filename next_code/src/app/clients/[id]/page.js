@@ -2,11 +2,12 @@
 
 import { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
-import Link from 'next/link';
-import { getClients } from '@/service/clientsService';
+
+import { getClientById } from '@/service/clientsService';
+
 import './ClientDetailPage.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft, faEdit, faUserCircle, faCalendarAlt, faEnvelope, faPhone, faHistory } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft, faUserCircle, faCalendarAlt, faEnvelope, faPhone, faHistory } from '@fortawesome/free-solid-svg-icons';
 
 export default function ClientDetailPage() {
     const params = useParams();
@@ -16,27 +17,22 @@ export default function ClientDetailPage() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    useEffect(() => {
-        if (id) {
-            const fetchClient = async () => {
-                try {
-             
-                    const allClients = await getClients();
-                    const foundClient = allClients.find(c => c.id === parseInt(id));
-                    if (foundClient) {
-                        setClient(foundClient);
-                    } else {
-                        throw new Error('Client not found');
-                    }
-                } catch (err) {
-                    setError(err.message);
-                } finally {
-                    setLoading(false);
-                }
-            };
-            fetchClient();
-        }
-    }, [id]);
+ useEffect(() => {
+  if (id) {
+    const fetchClient = async () => {
+      try {
+        const fetchedClient = await getClientById(id);
+        setClient(fetchedClient);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchClient();
+  }
+}, [id]);
+
 
     if (loading) {
         return <div className="loadingState">Loading client details...</div>;
@@ -56,9 +52,7 @@ export default function ClientDetailPage() {
                 <button onClick={() => router.back()} className="backButton">
                     <FontAwesomeIcon icon={faArrowLeft} /> Back to List
                 </button>
-                <Link href={`/clients/edit/${client.id}`} className="editLink">
-                    <FontAwesomeIcon icon={faEdit} /> Edit Client
-                </Link>
+              
             </div>
 
             <div className="clientInfoCard">

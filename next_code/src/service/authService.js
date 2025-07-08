@@ -1,4 +1,7 @@
-const API_URL = '/api/auth';
+
+// this service is responsible of managing user authentication  : 
+
+const API_URL =    '/api/auth';
 
 export const login = async (credentials) => {
     const response = await fetch(`${API_URL}/login`, {

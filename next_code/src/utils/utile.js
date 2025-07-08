@@ -20,3 +20,4 @@ export async function wait(time) {
         setTimeout(resolve, time > 0 ? time : 0);
     });
 }
+

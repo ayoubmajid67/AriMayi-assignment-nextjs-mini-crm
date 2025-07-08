@@ -9,6 +9,8 @@ import {
 } from '@/app/db/clients';
 import { verifyToken } from '@/utils/auth';
 
+
+
 export async function GET(request) {
   try {
     verifyToken(request);
@@ -89,7 +91,11 @@ export async function PUT(request) {
 
 export async function DELETE(request) {
   try {
+
+    
+    console.log('Received DELETE request for clients');
     verifyToken(request);
+
 
     const { searchParams } = new URL(request.url);
     const id = searchParams.get('id');
@@ -101,7 +107,9 @@ export async function DELETE(request) {
       );
     }
 
+   
     const client = findClientById(id);
+
     if (!client) {
       return new NextResponse(
         JSON.stringify({ message: 'Client introuvable.' }),

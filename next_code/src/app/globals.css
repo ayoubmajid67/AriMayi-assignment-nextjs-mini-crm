@@ -17,6 +17,7 @@ li{
 :root {
   /* Color System */
   --primary-color: #6143ca;
+  --primary-color-dark: #432b98;
   --secondary-color: #60bcf2;
   --accent-color: #E74C3C;
   --success-color: #2ECC71;
@@ -355,6 +356,7 @@ p {
 
 .PageComponentClass{
   margin-top: 113px;
+  min-height: 100vh;
 
   @media(max-width : 552px){
     margin-top: 94px;

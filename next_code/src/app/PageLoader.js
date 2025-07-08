@@ -5,6 +5,7 @@ import HeaderOutlet from "@/components/headerOutlet/HeaderOutlet";
 import FooterOutlet from "@/components/footerOutlet/FooterOutlet";
 import { usePathname, useRouter } from "next/navigation";
 import { useAuth } from "@/hooks/useAuth";
+import Snackbar from "@/components/snackbar/Snackbar";
 
 export default function PageLoader({ children }) {
   const currentPage = usePathname();
@@ -31,11 +32,14 @@ export default function PageLoader({ children }) {
     }, 100);
   }, [currentPage, isAuthenticated, isAuthPage, isNoAuthPage, router]);
 
-
   return (
     <>
       {isAllowShowHeader && <HeaderOutlet profileImg="/assets/imgs/profile.png" />}
+      
       {children}
+      <Snackbar />
+
+      
       {isAllowShowFooter && <FooterOutlet />}
     </>
   );

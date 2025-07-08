@@ -108,21 +108,6 @@ export const testimonials = [
     }
   ];
   
-  export const partners = [
-    {
-      id: 1,
-      logo: "/assets/partners/partner1.png",
-      name: "Partenaire Startup",
-      description: "Projet RH ou immobilier réalisé avec apprenants."
-    },
-    {
-      id: 2,
-      logo: "/assets/partners/partner2.png",
-      name: "Partenaire PME",
-      description: "Cas concrets en situation de travail."
-    }
-  ];
-  
   export const contactInfo = {
     name : "AriMayi",
     description : "Apprenez par la pratique. Intégrez des projets réels. Préparez votre avenir.",

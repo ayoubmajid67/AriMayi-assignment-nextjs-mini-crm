@@ -2,15 +2,19 @@
 
 import { createContext, useState, useEffect } from 'react';
 import { login as loginService, register as registerService } from '@/service/authService';
-
 export const AuthContext = createContext(null);
 
+import { dropAuthToken, setAuthToken,getAuthToken } from '@/service/cookieService';
+
 export default function AuthProvider({ children }) {
+
+   
+
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const token = localStorage.getItem('authToken');
+        const token = getAuthToken(); 
         if (token) {
 
             setUser({ token });
@@ -18,9 +22,10 @@ export default function AuthProvider({ children }) {
         setLoading(false);
     }, []);
 
+
     const login = async (credentials) => {
         const { user, token } = await loginService(credentials);
-        localStorage.setItem('authToken', token);
+         setAuthToken(token); 
         setUser(user);
     };
 
@@ -30,7 +35,8 @@ export default function AuthProvider({ children }) {
     };
 
     const logout = () => {
-        localStorage.removeItem('authToken');
+        dropAuthToken(); 
+     
         setUser(null);
     };
 

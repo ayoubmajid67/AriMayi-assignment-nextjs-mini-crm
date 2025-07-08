@@ -1,0 +1,95 @@
+.ModelFormComponentClass {
+  background-color: var(--background-light);
+  padding: var(--spacing-6);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  animation: fadeIn var(--transition-normal) var(--transition-timing);
+  font-family: var(--font-primary);
+
+  h2 {
+    text-align: center;
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-6);
+    color: var(--text-primary);
+  }
+
+  .formGroup {
+    margin-bottom: var(--spacing-4);
+
+    label {
+      display: block;
+      margin-bottom: var(--spacing-2);
+      font-weight: var(--font-weight-medium);
+      color: var(--text-primary);
+      font-size: var(--font-size-sm);
+    }
+
+    input {
+      width: 100%;
+      padding: var(--spacing-2) var(--spacing-3);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      font-size: var(--font-size-base);
+      font-family: var(--font-primary);
+      transition: border-color var(--transition-normal) var(--transition-timing);
+
+      &:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(97, 67, 202, 0.2);
+      }
+    }
+  }
+
+  .formActions {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--spacing-4);
+    margin-top: var(--spacing-6);
+
+    .cancelButton,
+    .submitButton {
+      flex: 1;
+      padding: var(--spacing-2) var(--spacing-4);
+      font-size: var(--font-size-base);
+      border: none;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: background-color var(--transition-normal) var(--transition-timing),
+                  transform var(--transition-normal) var(--transition-timing);
+
+      &:hover {
+        transform: translateY(-2px);
+      }
+    }
+
+    .cancelButton {
+      background-color: #eee;
+      color: var(--text-primary);
+
+      &:hover {
+        background-color: #ddd;
+      }
+    }
+
+    .submitButton {
+      background-color: var(--primary-color);
+      color: var(--background-light);
+
+      &:hover {
+        background-color: var(--secondary-color);
+        box-shadow: var(--shadow-md);
+      }
+
+      &:disabled {
+        background-color: #c7c7c7;
+        cursor: not-allowed;
+        transform: none;
+      }
+    }
+  }
+}

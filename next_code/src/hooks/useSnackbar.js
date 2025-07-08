@@ -1,28 +1,12 @@
-import {useState} from "react";
-import {wait} from "@/utils/utile";
+import { useContext } from 'react';
+import { SnackbarContext } from '@/providers/SnackbarProvider';
 
 export function useSnackbar() {
-    const [snackbarOpen, setSnackbarOpen] = useState(false);
-    const [message, setMessage] = useState("");
-    const [severity, setSeverity] = useState("success"); // "success", "error", "warning", "info"
+  const context = useContext(SnackbarContext);
 
-    const handleSnackbarOpen = async (message, severity = "success",delay=0) => {
+  if (!context) {
+    throw new Error('useSnackbar must be used within a SnackbarProvider');
+  }
 
-      if(delay>0 )
-          await wait(delay)
-
-        setMessage(message);
-        setSeverity(severity);
-        setSnackbarOpen(true);
-    };
-
-    const handleSnackbarClose = () => setSnackbarOpen(false);
-
-    return {
-        snackbarOpen,
-        message,
-        severity,
-        handleSnackbarOpen,
-        handleSnackbarClose,
-    };
+  return context;
 }

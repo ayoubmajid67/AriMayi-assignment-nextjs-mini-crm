@@ -1,37 +1,47 @@
-// In-memory user store (simulates a database)
 let users = [
-    // Pre-populate with a test user for login
     {
         id: '1',
         username: 'Test User',
         email: 'test@arimayi.com',
-        // In a real app, NEVER store plain text passwords. Always hash them.
-        password: 'password123' 
+        password: 'password'
     }
 ];
 
-// Function to find a user by email
+
 export const findUserByEmail = (email) => {
     return users.find(user => user.email === email);
 };
 
-// Function to add a new user
+
 export const addUser = (userData) => {
     const newUser = {
-        id: (users.length + 1).toString(),
+        id: crypto.randomUUID(), 
         ...userData
     };
     users.push(newUser);
     return newUser;
 };
 
-// Function to get all users (for potential admin features)
+
 export const getUsers = () => {
     return users;
 };
 
-// Function to delete a user by ID
 export const deleteUser = (id) => {
+    const initialLength = users.length;
     users = users.filter(user => user.id !== id);
-    return true;
+    return users.length < initialLength; // true if a user was deleted
+};
+
+
+export const updateUser = (id, updatedData) => {
+    const userIndex = users.findIndex(user => user.id === id);
+    if (userIndex === -1) return null;
+
+    users[userIndex] = {
+        ...users[userIndex],
+        ...updatedData,
+        id: users[userIndex].id 
+    };
+    return users[userIndex];
 };

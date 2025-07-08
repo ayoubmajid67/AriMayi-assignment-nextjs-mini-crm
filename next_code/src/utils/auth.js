@@ -1,5 +1,7 @@
+import { getCookie } from '@/service/cookieService';
 import jwt from 'jsonwebtoken';
 
+ export const jwtExpirationTime = parseInt(process.env.NEXT_PUBLIC_JWT_EXPIRATION_TIME || "24", 10);
 export const verifyToken = (request) => {
   const authHeader = request.headers.get('authorization');
   if (!authHeader || !authHeader.startsWith('Bearer ')) {
@@ -10,14 +12,14 @@ export const verifyToken = (request) => {
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    return decoded; // contains user info
+    return decoded; 
   } catch (err) {
     throw new Error('Token invalide ou expiré');
   }
 };
 
 export const getAuthHeaders = () => {
-  const token = localStorage.getItem('authToken');
+  const token = getCookie('authToken');
   return {
     'Content-Type': 'application/json',
     Authorization: `Bearer ${token}`,

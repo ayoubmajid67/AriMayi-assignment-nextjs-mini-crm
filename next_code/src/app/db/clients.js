@@ -3,21 +3,21 @@ export const getClients = () => {
     return clients;
   };
   
-  // Find a client by email
+
   export const findClientByEmail = (email) => {
-    return clients.find(client => client.email === email);
+    return clients.find(client => client.email == email);
   };
   
 
-  // Find a client by ID
+
   export const findClientById = (id) => {
-    return clients.find(client => client.id === id);
+    return clients.find(client => client.id == id);
   };
   
-  // Add a new client
+
   export const addClient = (clientData) => {
     const newClient = {
-      id: (clients.length + 1).toString(),
+      id: crypto.randomUUID(),
       dateCreation: new Date().toISOString().split('T')[0],
       historique: [],
       ...clientData
@@ -26,9 +26,9 @@ export const getClients = () => {
     return newClient;
   };
   
-  // Update an existing client by ID
+
   export const updateClient = (id, updatedFields) => {
-    const index = clients.findIndex(client => client.id === id);
+    const index = clients.findIndex(client => client.id == id);
     if (index !== -1) {
       clients[index] = { ...clients[index], ...updatedFields };
       return clients[index];
@@ -36,9 +36,9 @@ export const getClients = () => {
     return null;
   };
   
-  // Delete a client by ID
+
   export const deleteClient = (id) => {
-    const index = clients.findIndex(client => client.id === id);
+    const index = clients.findIndex(client => client.id == id);
     if (index === -1) return false;
     clients.splice(index, 1);
     return true;

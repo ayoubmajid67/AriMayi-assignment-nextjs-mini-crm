@@ -18,7 +18,6 @@
     }
 
     // Intersection Observer for animations
-    
 
     export const addOnScrollObserver = ()=>{
         const animationObserver =  new IntersectionObserver((entries) => {

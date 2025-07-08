@@ -37,6 +37,7 @@ export const updateClient = async (clientData) => {
 };
 
 export const deleteClient = async (id) => {
+ 
   const response = await fetch(`${CLIENTS_API}?id=${id}`, {
     method: 'DELETE',
     headers: getAuthHeaders(),
@@ -44,6 +45,18 @@ export const deleteClient = async (id) => {
   if (!response.ok) {
     const error = await response.json();
     throw new Error(error.message || 'Erreur suppression');
+  }
+  return response.json();
+};
+
+export const getClientById = async (id) => {
+  const response = await fetch(`${CLIENTS_API}/${id}`, {
+    method: 'GET',
+    headers: getAuthHeaders(),
+  });
+  if (!response.ok) {
+    const error = await response.json();
+    throw new Error(error.message || 'Erreur récupération client');
   }
   return response.json();
 };

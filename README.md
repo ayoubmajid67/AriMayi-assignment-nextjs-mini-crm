@@ -72,27 +72,7 @@ Pour exécuter ce projet en local, suivez ces étapes :
 
 4.  Ouvrez votre navigateur et allez sur [http://localhost:3000](http://localhost:3000).
 
-## 📂 Structure du Projet
 
-Le projet suit une structure organisée pour faciliter la maintenance et la scalabilité :
-
-```
-/
-├── app/                  # App Router : pages, layouts, etc.
-│   ├── (auth)/login/     # Route pour la connexion
-│   ├── (dashboard)/      # Routes protégées après connexion
-│   │   ├── layout.tsx    # Layout du dashboard
-│   │   ├── page.tsx      # Page du dashboard
-│   │   ├── clients/      # Pages liées aux clients
-│   │   └── ...
-├── components/           # Composants réutilisables (UI, formulaires, etc.)
-│   ├── ui/               # Petits composants d'interface (Button, Input...)
-│   └── ...
-├── data/                 # Données mockées (ex: clients.json)
-├── hooks/                # Hooks personnalisés
-├── lib/                  # Fonctions utilitaires
-├── public/               # Fichiers statiques (images, polices)
-└── ...
 ```
 
 ## 🌟 Bonus
